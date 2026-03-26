@@ -24,7 +24,7 @@ jobs:
         run: |
           if [ -n "${{ github.event.merge_group }}" ]; then
             echo "================================================"
-            echo "  MERGE QUEUE - MERGE STRATEGY DETAILS"
+            echo "  MERGE QUEUE - SQUASH STRATEGY DETAILS"
             echo "================================================"
             echo ""
             echo "  This branch being merged:"
