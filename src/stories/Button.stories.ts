@@ -35,7 +35,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    label: 'Second PR change',
+    label: 'PR number 2',
   },
 };
 
