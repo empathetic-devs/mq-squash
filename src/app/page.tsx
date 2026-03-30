@@ -1,7 +1,12 @@
+'use client'
+
 import Image from "next/image";
 import styles from "./page.module.css";
+import React from "react";
 
 export default function Home() {
+  const [someSelectedOption, setSomeSelectedOption] = React.useState("option1");
+  const [someInputValue, setSomeInputValue] = React.useState("");
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -59,6 +64,26 @@ export default function Home() {
           >
             Documentation
           </a>
+        </div>
+        <div>
+          <select
+            value={someSelectedOption}
+            onChange={(e) => setSomeSelectedOption(e.target.value)}
+          >
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+          </select>
+          <div>Selected option: {someSelectedOption}</div>
+        </div>
+        <div>
+          <input
+            type="text"
+            value={someInputValue}
+            onChange={(e) => setSomeInputValue(e.target.value)}
+            placeholder="Type something..."
+          />
+          <div>Input value: {someInputValue}</div>
         </div>
       </main>
     </div>
