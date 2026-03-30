@@ -70,9 +70,9 @@ export default function Home() {
             value={someSelectedOption}
             onChange={(e) => setSomeSelectedOption(e.target.value)}
           >
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
+            <option value="option1">Option A</option>
+            <option value="option2">Option B</option>
+            <option value="option3">Option C</option>
           </select>
           <div>Selected option: {someSelectedOption}</div>
         </div>
@@ -81,9 +81,9 @@ export default function Home() {
             type="text"
             value={someInputValue}
             onChange={(e) => setSomeInputValue(e.target.value)}
-            placeholder="Type something..."
+            placeholder="Placeholder..."
           />
-          <div>Input value: {someInputValue}</div>
+          <div>User input value: {someInputValue}</div>
         </div>
       </main>
     </div>

@@ -37,19 +37,19 @@ export const SelectOption3: Story = {
 export const TypeInInput: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const input = canvas.getByPlaceholderText("Type something...");
+    const input = canvas.getByPlaceholderText("Placeholder...");
     await userEvent.type(input, "Hello Storybook!");
-    await expect(canvas.getByText("Input value: Hello Storybook!")).toBeInTheDocument();
+    await expect(canvas.getByText("User input value: Hello Storybook!")).toBeInTheDocument();
   },
 };
 
 export const ClearInput: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const input = canvas.getByPlaceholderText("Type something...");
+    const input = canvas.getByPlaceholderText("Placeholder...");
     await userEvent.type(input, "temporary text");
     await userEvent.clear(input);
-    await expect(canvas.getByText("Input value:")).toBeInTheDocument();
+    await expect(canvas.getByText("User input value:")).toBeInTheDocument();
   },
 };
 
@@ -58,9 +58,9 @@ export const BothInteractions: Story = {
     const canvas = within(canvasElement);
     const select = canvas.getByRole("combobox");
     await userEvent.selectOptions(select, "option3");
-    const input = canvas.getByPlaceholderText("Type something...");
+    const input = canvas.getByPlaceholderText("Placeholder...");
     await userEvent.type(input, "Combined test");
     await expect(canvas.getByText("Selected option: option3")).toBeInTheDocument();
-    await expect(canvas.getByText("Input value: Combined test")).toBeInTheDocument();
+    await expect(canvas.getByText("User input value: Combined test")).toBeInTheDocument();
   },
 };
