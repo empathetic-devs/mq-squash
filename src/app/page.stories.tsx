@@ -20,8 +20,8 @@ export const SelectOption2: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const select = canvas.getByRole("combobox");
-    await userEvent.selectOptions(select, "sel2");
-    await expect(canvas.getByText("Selected option: sel2")).toBeInTheDocument();
+    await userEvent.selectOptions(select, "choice2");
+    await expect(canvas.getByText("Selected option: choice2")).toBeInTheDocument();
   },
 };
 
@@ -29,15 +29,15 @@ export const SelectOption3: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const select = canvas.getByRole("combobox");
-    await userEvent.selectOptions(select, "sel3");
-    await expect(canvas.getByText("Selected option: sel3")).toBeInTheDocument();
+    await userEvent.selectOptions(select, "choice3");
+    await expect(canvas.getByText("Selected option: choice3")).toBeInTheDocument();
   },
 };
 
 export const TypeInInput: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const input = canvas.getByPlaceholderText("Write here...");
+    const input = canvas.getByPlaceholderText("Enter text here...");
     await userEvent.type(input, "Hello Storybook!");
     await expect(canvas.getByText("User input value: Hello Storybook!")).toBeInTheDocument();
   },
@@ -46,7 +46,7 @@ export const TypeInInput: Story = {
 export const ClearInput: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const input = canvas.getByPlaceholderText("Write here...");
+    const input = canvas.getByPlaceholderText("Enter text here...");
     await userEvent.type(input, "temporary text");
     await userEvent.clear(input);
     await expect(canvas.getByText("User input value:")).toBeInTheDocument();
@@ -57,10 +57,10 @@ export const BothInteractions: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const select = canvas.getByRole("combobox");
-    await userEvent.selectOptions(select, "sel3");
-    const input = canvas.getByPlaceholderText("Write here...");
+    await userEvent.selectOptions(select, "choice3");
+    const input = canvas.getByPlaceholderText("Enter text here...");
     await userEvent.type(input, "Combined test");
-    await expect(canvas.getByText("Selected option: sel3")).toBeInTheDocument();
+    await expect(canvas.getByText("Selected option: choice3")).toBeInTheDocument();
     await expect(canvas.getByText("User input value: Combined test")).toBeInTheDocument();
   },
 };
