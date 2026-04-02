@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import React from "react";
 
 export default function Home() {
-  const [someSelectedOption, setSomeSelectedOption] = React.useState("pick1");
+  const [someSelectedOption, setSomeSelectedOption] = React.useState("sel1");
   const [someInputValue, setSomeInputValue] = React.useState("");
   return (
     <div className={styles.page}>
@@ -70,9 +70,9 @@ export default function Home() {
             value={someSelectedOption}
             onChange={(e) => setSomeSelectedOption(e.target.value)}
           >
-            <option value="pick1">Pick A</option>
-            <option value="pick2">Pick B</option>
-            <option value="pick3">Pick C</option>
+            <option value="sel1">Select A</option>
+            <option value="sel2">Select B</option>
+            <option value="sel3">Select C</option>
           </select>
           <div>Selected option: {someSelectedOption}</div>
         </div>
@@ -81,7 +81,7 @@ export default function Home() {
             type="text"
             value={someInputValue}
             onChange={(e) => setSomeInputValue(e.target.value)}
-            placeholder="Type something..."
+            placeholder="Write here..."
           />
           <div>User input value: {someInputValue}</div>
         </div>
