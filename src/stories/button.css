@@ -14,7 +14,7 @@
 .storybook-button--secondary {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
   background-color: transparent;
-  color: blue;
+  color: red;
 }
 .storybook-button--small {
   padding: 10px 16px;
