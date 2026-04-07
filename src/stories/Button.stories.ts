@@ -35,7 +35,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    label: 'Secondary button',
+    label: 'I am Blue',
   },
 };
 
