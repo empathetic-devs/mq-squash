@@ -29,13 +29,13 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     primary: true,
-    label: 'First PR',
+    label: 'Pink Label',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    label: 'Secondary button',
+    label: 'I am Blue',
   },
 };
 
